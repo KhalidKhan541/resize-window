@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((msg, s, resp) => { if(msg.action === 'resize') { chrome.windows.getCurrent(w => { chrome.windows.update(w.id, {width: msg.width, height: msg.height}); resp({success: true}); }); } });
